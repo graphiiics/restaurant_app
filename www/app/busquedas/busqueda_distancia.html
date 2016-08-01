@@ -1,0 +1,41 @@
+<ion-view view-title="{{ 't_busquedas' | translate }}" >
+   <ion-content class="has-header" ng-controller="DatosBusquedaNombreCtrl as vm">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="{{ 't_busquedas' | translate }}" ng-model="searchText">
+        </label>
+        <!--ion-list>
+          <div collection-repeat="item in vm.restaurantes | filter:searchText | orderBy:'nombre'" divider-collection-repeat>
+
+              <ion-item>
+                <div>{{item.nombre}}</div>
+              </ion-item>
+          </div>
+        </ion-list-->
+
+        <div class="list">
+          <div class="item" collection-repeat="restaurante in vm.restaurantes | filter:searchText | orderBy:'distancia'" divider-collection-repeat>
+            <div class="row">
+              <div class="col col-75">
+                <a class="item item-thumbnail-left" ui-sref="app.perfil({ id: restaurante.id })">
+                    <img ng-src="http://graphiiics.com/public/imagenes/restaurante_{{restaurante.id}}/{{restaurante.logo}}" >
+                    <h2>{{restaurante.nombre}}</h2>
+                    <div ng-if="restaurante.distancia > 0">
+                      <p>Dis: {{ restaurante.distancia }} km</p>
+                    </div>
+                </a>
+              </div>
+              <div class="col col-5">
+                <h3 class="outline padding balanced inline center img-rounded">
+                      {{ restaurante.calificacion }}
+                </h3>
+                <!--button class="button button-fab button-fab-center-right button-balanced waves-effect waves-button waves-light">
+                  {{ restaurante.restaurante_calificacion }}
+                </button-->
+              </div>
+            </div>
+            <hr> 
+          </div>
+        </div>
+  </ion-content>
+</ion-view>

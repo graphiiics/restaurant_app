@@ -1,0 +1,39 @@
+
+<ion-view view-title="{{ 't_categoria' | translate }}">
+
+    <ion-content>
+        <ul class="list condensed-space item-bg-image waves-effect waves-button waves-light has-mask-reverse">
+            <li class="card dark-bg">
+                    <a ui-sref="app.categoria({ id: 'Mexicana' })" class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+                        <h2>{{ 't_comida_mexicana' | translate }}</h2>
+                        <img src="img/mexican_food.jpg">
+                    </a> 
+            </li>
+            <li class="card dark-bg">
+                    <a ui-sref="app.categoria({ id: 'Americana' })" class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+
+                        <h2>{{ 't_comida_americana' | translate }}</h2>
+                        <img src="img/american_food.jpg">
+                    </a> 
+            </li>
+            <li class="card dark-bg">
+                    <a ui-sref="app.categoria({ id: 'China' })" class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+                        <h2>{{ 't_comida_china' | translate }}</h2>
+                        <img src="img/chinese_food.jpg">
+                    </a> 
+            </li>
+            <li class="card dark-bg">
+                    <a ui-sref="app.categoria({ id: 'Italiana' })" class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+                        <h2>{{ 't_comida_italiana' | translate }}</h2>
+                        <img src="img/italian_food.jpg">
+                    </a> 
+            </li>
+            <li class="card dark-bg">
+                    <a ui-sref="app.categoria({ id: 'Japonesa' })" class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+                        <h2>{{ 't_comida_japonesa' | translate }}</h2>
+                        <img src="img/japanese_food.jpg">
+                    </a> 
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--El meta de Content-Security-Policy-->
+    <!--meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'"-->
+    <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"-->
+    
+    <title></title>
+    <link href='css/fontsgoogle.css' rel='stylesheet'>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-material/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/ionic.material.min.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/ionic-rating/ionic-rating.js"></script>
+    <script src="lib/ionic-rating/ionic-ratings.js"></script>
+    <script src="lib/angular-translate.min.js"></script>
+
+
+    <!-- ionic angular google maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false"></script>
+    <script src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- ng cordova js -->
+    <script src="lib/ng-cordova.js"></script>
+
+    <!--Notificaciones Push-->
+    <!--script src="js/PushNotification.js"></script>
+    <script src="js/PushCustom.js"></script-->
+    
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/menu_ctrl.js"></script>
+    <script src="js/perfil_ctrl.js"></script>
+
+    <!-- Del directorio app -->     
+    <script src="app/app.js"></script>
+
+    <!--Notificaciones Push-->
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+    <script src="app/menu_config/menu_ctrl.js"></script>
+    <script src="app/perfil_restaurante/perfil_ctrl.js"></script>
+
+    <!--Nuevas dependencias para probar el API RESTful-->
+    <script src="app/servicios/data_api.js"></script>
+    <script src="app/perfil_restaurante/data_perfil_ctrl.js"></script>
+    <script src="app/categorias/data_restaurantes_ctrl.js"></script>
+    <script src="app/categorias/lista_ctrl.js"></script>
+    <script src="app/menu_restaurante/data_menu_restaurante.js"></script>
+    <script src="app/fotos_restaurante/data_galeria_fotos.js"></script>
+    <script src="app/promociones_restaurante/data_galeria_promociones.js"></script>
+    <script src="app/promociones_restaurante/data_promocion.js"></script>
+    <script src="app/mapa/mapa_ctrl.js"></script>
+    <script src="app/perfil_restaurante/suscribir_ctrl.js"></script>
+    <script src="app/busquedas/data_busqueda.js"></script>
+    <script src="app/menu_config/idioma_ctrl.js"></script>
+    <script src="app/sugerencias/sugerencias_ctrl.js"></script>
+    <script src="app/sugerencias/recomendacion_ctrl.js"></script>
+
+</head>
+<body ng-app="RestauranteApp">
+    <ion-nav-view></ion-nav-view>
+</body>
+</html>

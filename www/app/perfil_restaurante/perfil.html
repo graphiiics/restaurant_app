@@ -1,0 +1,110 @@
+<ion-view view-title="{{ 't_restaurante' | translate }}" ng-controller="Perfil_Restaurante_Ctrl as vm">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+         <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante.id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> {{ 't_perfil' | translate }}
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante.id })" class="tab-item">
+                <i class="icon ion-android-map"></i> {{ 't_menu' | translate }}
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante.id })" class="tab-item">
+                <i class="icon ion-images"></i> {{ 't_fotos' | translate }}
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante.id })" class="tab-item">
+                <i class="icon ion-pricetags"></i> {{ 't_promociones' | translate }}
+            </a>
+            <a ui-sref="app.mapa({ id: vm.restaurante.id })" class="tab-item">
+                <i class="icon ion-ios-location"></i> {{ 't_mapa' | translate }}
+            </a>
+        </div>
+        <!--Portada-->
+        <div class="hero slide-up" style="background-image: url('http://graphiiics.com/public/imagenes/restaurante_{{vm.restaurante.id}}/{{vm.restaurante.foto}}')">
+            <div class="content">
+                <div class="avatar" style="background-image: url('http://graphiiics.com/public/imagenes/restaurante_{{vm.restaurante.id}}/{{vm.restaurante.logo}}')" ></div>
+                <h3><a class="light">{{vm.restaurante.nombre}}</a></h3>
+                <h4>{{vm.restaurante.eslogan}}</h4>
+            </div>
+
+        </div>
+        <div class="tabs tabs-clear tabs-icon-top static">
+            <a href="tel:{{ vm.restaurante.telefono }}"  class="tab-item">
+                <i class="icon ion-ios-telephone"></i> {{ 't_llamar' | translate }}
+            </a>
+            <a ng-click="showPopup()" class="tab-item">
+                <i class="icon ion-star"></i> {{ 't_calificar' | translate }}
+            </a>
+             <a ng-click="compartir()" class="tab-item">
+                <i class="icon ion-android-share-alt"></i> {{ 't_compartir' | translate }}
+            </a>
+            <a  class="tab-item">
+                <i ng-click="suscribir($event, 'icon ion-android-checkbox')"  class="icono" ng-class="checked ? 'icono icon ion-android-checkbox' : ' icono icon ion-android-checkbox-blank'"></i> {{ 't_suscribir' | translate }}
+            </a>
+        </div>
+
+
+        <!--Datos basicos-->
+        <div class="row">
+            <div class="col">
+                <div class="contect padding double-padding-x">
+                    <h4>{{ 't_informacion' | translate }}</h4>
+                    <ul class="list">
+                        <li> <i class="icon ion-clock"></i> {{ 't_horario' | translate }}: {{vm.restaurante.horario}}</li>
+                        <li> <i class="ion-ios-telephone"></i> {{ 't_telefono' | translate }}: {{ vm.restaurante.telefono }} </li>
+                        <li> <i class="ion-map"></i> {{ 't_direccion' | translate }}: {{ vm.restaurante.direccion }} </li>
+                        <li> <i class="ion-cash"></i> {{ 't_rango' | translate }}: 
+                            <i class="ion-social-usd" ng-repeat="i in [1,2,3,4,5] | limitTo:vm.restaurante.rango_precio"> </i>
+                        </li>
+                        <li> 
+                            <!--Implementar una funcion que mande llamar a window.open-->
+                            
+                                <i class="ion-android-globe"></i><a href="#" ng-click="openWebSite()"> {{ vm.restaurante.sitio_web }}</a>
+                            
+                        </li>
+                        <li> 
+                            
+                                <i class="ion-social-facebook"></i><a href="#" ng-click="openFacebook()"> {{ vm.restaurante.url_facebook }}</a>
+                           
+                        </li>
+                        <li> 
+                            
+                                <i class="ion-social-twitter"></i><a href="#" ng-click="openTwitter()"> {{ vm.restaurante.url_twitter }}</a>
+                           
+                        </li>
+                        <!--li> 
+                            
+                                <i class="ion-social-twitter">{{ vm.restaurante.estatus }}</i>
+                           
+                        </li-->
+                        
+                    </ul>
+                </div>
+            </div>
+                
+        </div>
+        <button class="button button-fab button-fab-bottom-right button-balanced waves-effect waves-button waves-light">
+                {{ vm.restaurante.calificacion }}
+        </button>
+        <hr>
+        <!--Datos destacados -->
+        <div class="contect padding double-padding-x">
+            <h4>{{ 't_destacados' | translate }}</h4>
+            <ul>
+                <li ng-if="vm.restaurante.dd_wifi == 1"> <i class="ion-android-checkmark-circle"></i> Wi-Fi </li>
+                <li ng-if="vm.restaurante.dd_afuera == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_afuera' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_vegetariana == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_vegetariana' | translate }}</li>
+                <li ng-if="vm.restaurante.dd_domicilio == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_domicilio' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_terraza == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_terraza' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_llevar == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_llevar' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_bar == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_bar' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_alcohol == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_alcohol' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_fumadores == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_fumadores' | translate }} </li>
+                <li ng-if="vm.restaurante.dd_musica == 1"> <i class="ion-android-checkmark-circle"></i> {{ 't_musica' | translate }} </li>
+        </div>
+        <hr>
+    </ion-content>
+</ion-view>
+
+            
+            
+

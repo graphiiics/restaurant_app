@@ -1,0 +1,33 @@
+
+<ion-view view-title="{{ 't_menu' | translate }}">
+    <ion-content ng-controller="Menu_Restaurante_Ctrl as vm">
+    <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> {{ 't_perfil' | translate }}
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-map"></i> {{ 't_menu' | translate }}
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-images"></i> {{ 't_fotos' | translate }}
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-pricetags"></i> {{ 't_promociones' | translate }}
+            </a>
+            <a ui-sref="app.mapa({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-ios-location"></i> {{ 't_mapa' | translate }}
+            </a>
+        </div>
+
+        <div class="row" ng-repeat="image in allImages" ng-if="$index % 2 === 0">
+            <div class="col col-50" ng-if="$index < allImages.length">
+                <img ng-src="{{allImages[$index].src}}" ng-click="showImages($index)" width="100%" />
+            </div>
+            <div class="col col-50" ng-if="$index + 1 < allImages.length">
+                <img ng-src="{{allImages[$index + 1].src}}" ng-click="showImages($index)" width="100%" />
+            </div>
+        </div>
+       
+    </ion-content>
+</ion-view>

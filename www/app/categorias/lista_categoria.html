@@ -1,0 +1,30 @@
+<ion-view view-title="{{ 't_categoria' | translate }}" ng-controller="DatosRestaurantesCtrl as vm">
+    <ion-content>
+    <div class="list">
+        <div class="item" ng-repeat="restaurante in vm.restaurantes">
+          <div class="row">
+            <div class="col col-75">
+              <a class="item item-thumbnail-left" ui-sref="app.perfil({ id: restaurante.id })">
+                  <!--img src="img/mogi.jpg"-->
+                  <img ng-src="http://graphiiics.com/public/imagenes/restaurante_{{restaurante.id}}/{{restaurante.logo}}" >
+                  <h2>{{restaurante.nombre}}</h2>
+                  <div ng-if="restaurante.estatus > 0">
+                    <p>Dis: {{ restaurante.estatus }} km</p>
+                  </div>
+                  <i class="ion-social-usd" ng-repeat="i in [1,2,3,4,5] | limitTo:restaurante.rango_precio"> </i>
+              </a>
+            </div>
+            <div class="col col-5">
+              <h3 class="outline padding balanced inline center img-rounded">
+                    {{ restaurante.calificacion }}
+              </h3>
+              <!--button class="button button-fab button-fab-center-right button-balanced waves-effect waves-button waves-light">
+                {{ restaurante.restaurante_calificacion }}
+              </button-->
+            </div>
+          </div>
+          <hr> 
+        </div>
+    </div>
+    </ion-content>
+</ion-view>

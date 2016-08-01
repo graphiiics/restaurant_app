@@ -1,0 +1,17 @@
+
+<ion-view view-title="{{ 't_sugerencias' | translate }}" ng-controller="Sugerencias_Ctrl">
+    <ion-content>
+
+      <form ng-submit="createTask(task)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="{{ 't_comentarios' | translate }}" ng-model="task">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" ng-click="showAlert()" class="button button-block button-positive">{{ 't_enviar' | translate }}</button>
+        </div>
+      </form>
+
+    </ion-content>
+</ion-view>

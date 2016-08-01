@@ -1,0 +1,26 @@
+
+<ion-view view-title="{{ 't_idioma' | translate }}">
+    <ion-content ng-controller="Idioma_Ctrl">
+    <div class="padding">
+        <button class="button button-block button-positive" ng-click="ChangeLanguage('en')">
+             {{"t_ingles" | translate}}
+        </button>
+        <button class="button button-block button-energized" ng-click="ChangeLanguage('es')">
+             {{"t_español" | translate}}
+        </button>
+        <button class="button button-block button-balanced" ng-click="ChangeLanguage('it')">
+             {{ 't_italiano' | translate }}
+        </button>
+        <button class="button button-block button-royal" ng-click="ChangeLanguage('fr')">
+             {{ 't_frances' | translate }}
+        </button>
+        <button class="button button-block button-assertive" ng-click="ChangeLanguage('ch')">
+             {{ 't_chino' | translate }}
+        </button>
+        <button class="button button-block button-dark" ng-click="ChangeLanguage('ge')">
+             {{ 't_aleman' | translate }}
+        </button>
+    </div>    
+        
+    </ion-content>
+</ion-view>

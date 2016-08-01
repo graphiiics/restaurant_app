@@ -1,0 +1,17 @@
+
+<ion-view view-title="{{ 't_recomendar' | translate }}" ng-controller="Recomendacion_Ctrl">
+    <ion-content>
+
+      <form ng-submit="recomendarApp(mje)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="{{ 't_comentarios' | translate }}" ng-model="mje">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">{{ 't_enviar' | translate }}</button>
+        </div>
+      </form>
+
+    </ion-content>
+</ion-view>

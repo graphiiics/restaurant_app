@@ -1,0 +1,38 @@
+<ion-view view-title="{{ 't_mapa' | translate }}" ng-controller="Mapa_Ctrl as vm">
+	<ion-content class="has-header">
+	<div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> {{ 't_perfil' | translate }}
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-map"></i> {{ 't_menu' | translate }}
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-images"></i> {{ 't_fotos' | translate }}
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-pricetags"></i> {{ 't_promociones' | translate }}
+            </a>
+            <a ui-sref="app.mapa({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-ios-location"></i> {{ 't_mapa' | translate }}
+            </a>
+        </div>
+	  
+		<ui-gmap-google-map deggrable="true" center='vm.map.center' zoom='vm.map.zoom'>
+			<ui-gmap-marker idKey='vm.markerRestaurante.id' coords='vm.markerRestaurante.coords'>
+			<ui-gmap-marker idKey='vm.markerMyselft' coords='vm.markerMyselft.cordenadas'>
+			
+		</ui-gmap-google-map>
+        <button class="button button-fab button-fab-bottom-left button-assertive waves-effect waves-button waves-light" ng-click="getRuta()">
+                 <i class="ion-android-car">
+        </button>
+			
+	</ion-content>
+	
+</ion-view>
+
+<!--ion-view view-title="Google Maps V3 example">      
+    <ion-content data-tap-disabled="true">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    </ion-content>
+</ion-view-->

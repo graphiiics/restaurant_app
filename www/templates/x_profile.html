@@ -1,0 +1,65 @@
+<ion-view view-title="Restaurant">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+         <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.profile" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> Perfil
+            </a>
+            <a ui-sref="app.profile" class="tab-item">
+                <i class="icon ion-android-map"></i> Menú
+            </a>
+            <a ui-sref="app.profile" class="tab-item">
+                <i class="icon ion-images"></i> Fotos
+            </a>
+             <a ui-sref="app.profile" class="tab-item">
+                <i class="icon ion-pricetags"></i> Promociones
+            </a>
+            <a ui-sref="app.profile" class="tab-item">
+                <i class="icon ion-ios-location"></i> Mapa
+            </a>
+        </div>
+        <!--Portada-->
+        <div class="hero slide-up" style="background-image: url('img/mogi_restaurant.jpg');">
+
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/mogi.jpg');"></div>
+                <h3><a class="light">Mogi Mirim</a></h3>
+                <h4>Onde a gula ñas é pecado!</h4>
+            </div>
+
+        </div>
+        <!--Botones de suscripcion-->
+        <div class="button-bar static">
+                <button class="button button-large button-clear flat  icon ion-ios-telephone"></button>
+                <button class="button button-large button-clear flat  icon ion-star"></button>
+                <button class="button button-large button-clear flat  icon ion-android-share-alt"></button>
+                <button class="button button-large button-clear flat  icon ion-android-alert"></button>
+        </div>
+        <hr>
+        <!--Datos basicos-->
+        <div class="contect padding double-padding-x">
+            <h4>Info</h4>
+            <ul class="list">
+                <li> <i class="icon ion-clock"></i> Horario: 9:00 AM - 10:00 PM </li>
+                <li> <i class="ion-ios-telephone"></i> Teléfono: 492 456 54 55 </li>
+                <li> <i class="ion-map"></i> Dirección: Hidalgo #212 </li>
+                <li> <i class="ion-android-globe"></i> www.mogimirim.com</li>
+                <li> <i class="ion-social-facebook"></i> www.facebook.com/mogimirim </li>
+                <li> <i class="ion-social-twitter"></i> @MogiMirim </li>
+                <li> <i class="ion-cash"></i> Rango de precio: <i class="ion-social-usd"></i><i class="ion-social-usd"></i><i class="ion-social-usd"></i> </li>
+            </ul>
+        </div>
+        <hr>
+        <!--Datos destacados -->
+        <div class="contect padding double-padding-x">
+            <h4>Destacados</h4>
+            <ul>
+                <li> <i class="ion-android-checkmark-circle"></i> Zona Wi-Fi </li>
+                <li> <i class="ion-android-checkmark-circle"></i> Comida Vegetariana </li>
+                <li> <i class="ion-android-checkmark-circle"></i> Espacio para fumadores </li>
+                <li> <i class="ion-android-checkmark-circle"></i> Sirven bebidas alcoholicas </li>
+            </ul>
+        </div>
+        <hr>
+    </ion-content>
+</ion-view>

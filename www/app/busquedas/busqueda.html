@@ -1,0 +1,26 @@
+
+        <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-android-more-vertical" ui-sref="app.categorias"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-search"  ui-sref="busqueda.busqueda_calificacion"></button>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+<ion-tabs class="tabs-dark tabs-icon-top">
+  <ion-tab title="{{ 't_calificacion' | translate }}" icon="ion-android-star" ui-sref="busqueda.busqueda_calificacion">
+    <ion-nav-view name="tab-calificacion">
+    </ion-nav-view>
+  </ion-tab>
+  <ion-tab title="{{ 't_distancia' | translate }}" icon="ion-android-compass" ui-sref="busqueda.busqueda_distancia">
+    <ion-nav-view name="tab-distancia">
+    </ion-nav-view>
+  </ion-tab>
+  <ion-tab title="{{ 't_precio' | translate }}" icon="ion-cash" ui-sref="busqueda.busqueda_precio">
+    <ion-nav-view name="tab-precio">
+    </ion-nav-view>
+  </ion-tab>
+</ion-tabs>

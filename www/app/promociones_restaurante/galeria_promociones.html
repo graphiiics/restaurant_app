@@ -1,0 +1,37 @@
+<ion-view view-title="{{ 't_promociones' | translate }}">
+    <ion-content ng-controller="Promociones_Restaurante_Ctrl as vm">
+    <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> {{ 't_perfil' | translate }}
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-map"></i> {{ 't_menu' | translate }}
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-images"></i> {{ 't_fotos' | translate }}
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-pricetags"></i> {{ 't_promociones' | translate }}
+            </a>
+            <a ui-sref="app.mapa({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-ios-location"></i> {{ 't_mapa' | translate }}
+            </a>
+        </div>
+
+        <div class="list" ng-repeat="promo in vm.promociones">
+            
+            <a class="item item-thumbnail-left"  ui-sref="app.promo({ id: promo.id })">
+                <img src="http://graphiiics.com/public/promo/restaurante_{{promo.id_restaurante}}/{{promo.imagen}}" width="100%"/> 
+                <br>    
+                <h3>{{promo.texto}}</h3>
+                <p>{{promo.fecha_vigencia}}</p>
+             </a>   
+                  
+        </div>
+        
+        
+       
+    </ion-content>
+</ion-view>
+
